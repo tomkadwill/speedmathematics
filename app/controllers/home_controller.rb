@@ -1,5 +1,4 @@
-class HomeController < ActionController::Base
-	def index
+class HomeController < ApplicationController
 		# 1) Check if the user has made a selection from the dropdown menu.
 		# If so, set the session and skip 2)
 
@@ -9,5 +8,9 @@ class HomeController < ActionController::Base
 		# know the discliple and session).
 		# ELSE
 		# don't show the play button and force the user to make a choice.
+
+	def index
+		@question = '92 x 98'
+		@answer = 9016
 	end
 end

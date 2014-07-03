@@ -1,1 +1,17 @@
+<script>
+$(document).ready(function(){
+	$("#content").on( "click", function() {
+		alert('tom');
+	});
+});
+</script>
+
 <h1>Speed Mathematics</h1>
+
+<div id="content">
+	<% if @question %>
+		<%= @question %>
+	<% else %>
+		<%= @answer %>
+	<% end %>
+</div>
