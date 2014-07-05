@@ -5,4 +5,10 @@ class QuestionsController < ApplicationController
 		render partial: 'question_box', locals: {chapter: question}
 	end
 
+	def answer
+		question = Question.find_question_by_answer(params[:question])
+		answer = Answer.for_question(question)
+		render partial: 'answer_box', locals: {answer: answer}
+	end
+
 end

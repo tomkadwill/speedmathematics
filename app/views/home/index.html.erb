@@ -10,6 +10,18 @@ $(document).on('change','#chapter',function(e){
   }
   $.get(url, replaceDataBox);
 });
+
+$(document).on('click', '#content', function(e){
+	var url = 'question/answer';
+	var question = $.trim($(this).text());
+	console.log(question);
+
+  var replaceDataBox = function(response) {
+  	var content = $('#content');
+    content.replaceWith(response);
+  }
+	$.get(url, {question: question}, replaceDataBox)
+});
 </script>
 
 <h1>Speed Mathematics</h1>
