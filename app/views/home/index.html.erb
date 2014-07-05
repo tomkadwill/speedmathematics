@@ -1,12 +1,22 @@
 <script>
-$(document).ready(function(){
-	$("#content").on( "click", function() {
-		alert('tom');
-	});
+$(document).on('change','#chapter',function(e){
+  var form = $(this).closest('form');
+  var value = $(this).val();
+  var url = form.attr('action');
+
+  var replaceDataBox = function(response) {
+  	var content = $('#content');
+    content.replaceWith(response);
+  }
+  $.get(url, replaceDataBox);
 });
 </script>
 
 <h1>Speed Mathematics</h1>
+
+<%= form_tag(next_question_path, method: "get", id: 'chapter') do %>
+ 	<%= select_tag(:chapter, options_for_select(chapters)) %>
+<% end %>
 
 <div id="content">
 	<% if @question %>

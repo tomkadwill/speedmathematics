@@ -14,8 +14,7 @@
 ActiveRecord::Schema.define(version: 20140702182957) do
 
   create_table "questions", force: true do |t|
-    t.string   "discipline"
-    t.string   "chapter"
+    t.integer  "chapter"
     t.integer  "question_one"
     t.integer  "question_two"
     t.datetime "created_at"

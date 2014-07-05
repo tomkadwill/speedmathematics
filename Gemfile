@@ -42,5 +42,6 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.0'
 end
 
-gem "jquery-rails"
-
+gem 'jquery-rails'
+gem 'factory_girl_rails'
+gem 'seed-fu'

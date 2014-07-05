@@ -2,21 +2,21 @@ require 'rails_helper'
 
 RSpec.describe Question, :type => :model do
 
-	describe '#get' do
+	describe '.get' do
 		before do
-			@question = Question.new
-			@question.discipline = 'multiplication'
-			@question.chapter = 2
-			@question.question_one = 92
-			@question.question_two = 92
-			@question.save!
+			@first_question = FactoryGirl.create :question
+			@second_question = FactoryGirl.create :question
 		end
-
-		# change this to return a random record
-		# beforehand - you should install factory girl
-		it 'returns question record' do
-			expect(Question.get('multiplication', 2).first).to eq(@question)
+		
+		it 'returns question record of matching chapter' do
+			expect(Question.get(1).chapter).to eq(@first_question.chapter)
 		end
+	end
 
+	describe '#formatted' do
+		it 'returns formatted question string' do
+			@question = FactoryGirl.build :question
+			expect(@question.formatted).to eq('92 x 98')
+		end
 	end
 end
