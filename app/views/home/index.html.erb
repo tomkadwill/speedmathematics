@@ -41,8 +41,12 @@ $(document).on('click', '#contentAnswer', function(e){
 
 <div id="content">
 	<% if @question %>
-		<%= @question %>
-	<% else %>
-		<%= @answer %>
+		<span id="question"><%= @question %></span>
 	<% end %>
 </div>
+
+<!--refactor footer out of index -->
+
+<footer>
+  by <%= link_to 'Tom Kadwill', 'https://twitter.com/tomkadwill' %>
+</footer>
