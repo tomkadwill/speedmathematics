@@ -14,13 +14,22 @@ $(document).on('change','#chapter',function(e){
 $(document).on('click', '#content', function(e){
 	var url = 'question/answer';
 	var question = $.trim($(this).text());
-	console.log(question);
 
   var replaceDataBox = function(response) {
   	var content = $('#content');
     content.replaceWith(response);
   }
 	$.get(url, {question: question}, replaceDataBox)
+});
+
+$(document).on('click', '#contentAnswer', function(e){
+  var url = 'question/next';
+
+  var replaceDataBox = function(response) {
+    var content = $('#contentAnswer');
+    content.replaceWith(response);
+  }
+  $.get(url, replaceDataBox)
 });
 </script>
 
