@@ -45,3 +45,4 @@ end
 gem 'jquery-rails'
 gem 'factory_girl_rails'
 gem 'seed-fu'
+gem 'pg'
