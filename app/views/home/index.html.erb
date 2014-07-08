@@ -40,7 +40,7 @@ $(document).on('click', '#contentAnswer', function(e){
   <p><label class="custom-select">
  	<%= select_tag(:chapter, options_for_select(chapters)) %>
  </label></p>
- 
+
 <% end %>
 
 <div id="content">
@@ -49,8 +49,12 @@ $(document).on('click', '#contentAnswer', function(e){
 	<% end %>
 </div>
 
+<div id="explanation">
+  Select a chapter from <%= link_to 'the book', 'http://www.amazon.co.uk/Speed-Mathematics-Secret-Skills-Calculation/dp/0471467316' %> that you want to practise and click the button to reveal the answer. Click again to generate a new question.
+</div>
+
 <!--refactor footer out of index -->
 
 <footer>
-  by <%= link_to 'Tom Kadwill', 'https://twitter.com/tomkadwill' %>
+  <%= link_to '@tomkadwill', 'https://twitter.com/tomkadwill' %>
 </footer>

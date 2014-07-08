@@ -27,6 +27,8 @@ body {
 	text-align: center;
 	font-family: “Trebuchet MS”, Verdana, Arial, Helvetica, sans-serif;
 
+	a { text-decoration: none; color: #777; }
+
 	#content, #contentAnswer {
 		font-size: 70px;
 		padding-top: 40px;
@@ -60,14 +62,15 @@ body {
 		}
 	}
 
-	footer {
+	#explanation {
 		color: #666;
-
-		a {
-			text-decoration: none;
-			color: #777;
-		}
+		padding-bottom: 40px;
+		padding-left: 20%;
+		padding-right: 20%;
+		text-align: center;
 	}
+
+	footer { color: #666; }
 }
 
 
