@@ -16,6 +16,7 @@
 
 h1 {
 	text-align: center;
+	padding-bottom: 30px;
 	/*color: #D17DE8*/
 	color: #666;
 ;
@@ -28,7 +29,8 @@ body {
 
 	#content, #contentAnswer {
 		font-size: 70px;
-		margin-top: 10%;
+		padding-top: 40px;
+		padding-bottom: 40px;
 
 		user-select: none;
 		-webkit-touch-callout: none;
