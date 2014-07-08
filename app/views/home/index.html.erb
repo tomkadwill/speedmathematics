@@ -36,7 +36,11 @@ $(document).on('click', '#contentAnswer', function(e){
 <h1>Speed Mathematics</h1>
 
 <%= form_tag(next_question_path, method: "get", id: 'chapter') do %>
+
+  <p><label class="custom-select">
  	<%= select_tag(:chapter, options_for_select(chapters)) %>
+ </label></p>
+ 
 <% end %>
 
 <div id="content">
