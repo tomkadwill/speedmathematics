@@ -1,3 +1,4 @@
+# chapter 1
 Question.seed(:id, 
   { id: 1, chapter: 1, question_one: 99, question_two: 99 },
   { id: 2, chapter: 1, question_one: 99, question_two: 98 },
@@ -22,4 +23,9 @@ Question.seed(:id,
   { id: 20, chapter: 1, question_one: 92, question_two: 98 },
   { id: 21, chapter: 1, question_one: 94, question_two: 99 },
   { id: 22, chapter: 1, question_one: 98, question_two: 93 },
+)
+#chapter 2
+Question.seed(:id,
+  { id: 1, chapter: 2, question_one: 7, question_two: 8 },
+  { id: 1, chapter: 2, question_one: 8, question_two: 8 }
 )

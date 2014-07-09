@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
 
 	def next
-		question = Question.get(1).formatted
+		chapter = params['chapter'] || 1 # change this to set a session
+		question = Question.get(chapter).formatted
 		render partial: 'question_box', locals: {question: question}
 	end
 

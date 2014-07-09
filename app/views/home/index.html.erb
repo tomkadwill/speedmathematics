@@ -1,6 +1,6 @@
 <h1>Speed Mathematics</h1>
 
-<%= form_tag(next_question_path, method: "get", id: 'chapter') do %>
+<%= form_tag(next_question_path, method: "get", id: 'chapter-form') do %>
 
   <p><label class="custom-select">
  	<%= select_tag(:chapter, options_for_select(chapters)) %>

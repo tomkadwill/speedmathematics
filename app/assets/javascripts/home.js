@@ -7,7 +7,7 @@ $(document).on('change','#chapter',function(e){
   	var content = $('#content');
     content.replaceWith(response);
   }
-  $.get(url, replaceDataBox);
+  $.get(url, {chapter: value}, replaceDataBox);
 });
 
 $(document).on('click', '#content', function(e){
