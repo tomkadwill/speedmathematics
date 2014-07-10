@@ -1,7 +1,8 @@
 class QuestionsController < ApplicationController
 
 	def next
-		chapter = params['chapter'] || 1 # change this to set a session
+		chapter = params['chapter'] || session[:chapter] || 1 ## REFACTOR THIS
+		session[:chapter] = chapter unless chapter == session[:chapter] ## OUT
 		question = Question.get(chapter).formatted
 		render partial: 'question_box', locals: {question: question}
 	end
