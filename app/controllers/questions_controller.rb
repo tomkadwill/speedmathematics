@@ -1,14 +1,20 @@
 class QuestionsController < ApplicationController
 
 	def next
-		chapter = params['chapter'] || session[:chapter] || 1 ## REFACTOR THIS
-		session[:chapter] = chapter unless chapter == session[:chapter] ## OUT
-		question = Question.get(chapter).formatted
-		render partial: 'question_box', locals: {question: question}
+		# rafactor out of controller
+		chapter = params['chapter'] || session[:chapter] || 1
+		session[:chapter] = chapter unless chapter == session[:chapter]
+
+		# rafactor out of controller
+		question = Question.get(chapter)
+		session[:question] = question.id
+
+		render partial: 'question_box', locals: {question: question.formatted}
 	end
 
 	def answer
-		question = Question.find_question_by_answer(params[:question])
+		session_question = session.fetch(:question, 1)
+		question = Question.find(session_question)
 		answer = Answer.for_question(question)
 		render partial: 'answer_box', locals: {answer: answer}
 	end

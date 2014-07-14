@@ -13,16 +13,6 @@ RSpec.describe Question, :type => :model do
 		end
 	end
 
-	describe '.find_question_by_answer' do
-		before do
-			@question = FactoryGirl.create :question
-		end
-
-		it 'returns question for formatted question string' do
-			expect(Question.find_question_by_answer('92x98')).to eq([@question])
-		end
-	end
-
 	describe '#formatted' do
 		it 'returns formatted question string' do
 			@question = FactoryGirl.build :question

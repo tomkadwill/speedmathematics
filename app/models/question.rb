@@ -8,13 +8,16 @@ class Question < ActiveRecord::Base
 		random_chapter(chapter).first
 	end
 
-	def self.find_question_by_answer(answer)
-		answer_array = answer.split('x')
-		where(question_one: answer_array.first, question_two: answer_array.second)
+	def formatted
+		"#{first_random} x #{second_random}"
 	end
 
-	def formatted
-		"#{question_one} x #{question_two}"
+	def first_random
+		rand(question_one_lower..question_one_upper)
+	end
+
+	def second_random
+		rand(question_two_lower..question_two_upper)
 	end
 
 end
