@@ -5,7 +5,6 @@ RSpec.describe Question, :type => :model do
 	describe '.get' do
 		before do
 			@first_question = FactoryGirl.create :question
-			@second_question = FactoryGirl.create :question
 		end
 		
 		it 'returns question record of matching chapter' do
@@ -16,7 +15,7 @@ RSpec.describe Question, :type => :model do
 	describe '#formatted' do
 		it 'returns formatted question string' do
 			@question = FactoryGirl.build :question
-			expect(@question.formatted).to eq('92 x 98')
+			expect(@question.formatted).to eq('92 x 92')
 		end
 	end
 end
