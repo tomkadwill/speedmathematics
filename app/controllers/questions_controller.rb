@@ -1,15 +1,10 @@
 class QuestionsController < ApplicationController
 
+	before_filter :set_chapter_session, only: :next
+	before_filter :set_question_session, only: :next
+
 	def next
-		# rafactor out of controller
-		chapter = params['chapter'] || session[:chapter] || 1
-		session[:chapter] = chapter unless chapter == session[:chapter]
-
-		# rafactor out of controller
-		question = Question.get(chapter)
-		session[:question] = question.id
-
-		render partial: 'question_box', locals: {question: question.formatted}
+		render partial: 'question_box', locals: {question: @question.formatted}
 	end
 
 	def answer
@@ -17,6 +12,18 @@ class QuestionsController < ApplicationController
 		question = Question.find(session_question)
 		answer = Answer.for_question(question)
 		render partial: 'answer_box', locals: {answer: answer}
+	end
+
+	private
+
+	def set_chapter_session
+		@chapter = params['chapter'] || session[:chapter] || 1
+		session[:chapter] = @chapter unless @chapter == session[:chapter]
+	end
+
+	def set_question_session
+		@question = Question.get(@chapter)
+		session[:question] = @question.id
 	end
 
 end
